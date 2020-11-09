@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ensalada</title>
+</head>
+<body>
+	<script>
+		const numbers = [];
+			for(var i = 0; i < 6; i++){
+				numbers[i] = parseInt(prompt('Ingrese un entero'));
+		}
+			const sumPrimeros = numbers[0] + numbers[1] + numbers[2];
+			const prodTercerCuarto = numbers[2] * numbers[3];
+			const sumUltimos = numbers[4] + numbers[5];
+		document.write(`La suma de los primeros tres números es: ${sumPrimeros} <br>`);
+		document.write(`El producto del tercer y cuarto número es: ${prodTercerCuarto} <br>`);
+		document.write(`La suma de los últimos dos números es: ${sumUltimos}`);
+	</script>
+
+</body>
+</html>

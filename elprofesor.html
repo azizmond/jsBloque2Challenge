@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>El Profesor</title>
+</head>
+<body>
+	<script>
+		const primerNota = parseInt(prompt('Ingresar la primer nota'));
+		const segundaNota = parseInt(prompt('Ingresar la segunda nota'));
+			const total = primerNota + segundaNota;
+			const promedio = total / 2;
+			let masAlta;
+				if(primerNota > segundaNota){
+					masAlta = primerNota;
+				}else{
+					masAlta = segundaNota;
+				}
+		document.write(`La suma de las notas es: ${total} <br> El promedio es: ${promedio} <br> La nota más alta es: ${masAlta}`);
+	</script>
+</body>
+</html>

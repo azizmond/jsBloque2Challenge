@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>La Fabrica</title>
+</head>
+<body>
+	<script>
+		let empMenos = 0;
+		let empMas = 0;
+		let sumaSueldo = 0;
+		for(i = 0; i < 5; i++){
+			const sueldo = parseInt(prompt('Ingrese el sueldo del empleado'));
+				sumaSueldo += sueldo;
+				if(sueldo <= 300){
+					empMenos++;
+				}else{
+					empMas++;
+				}
+		}
+		document.write(`La cantidad de empleados que cobra hasta \$ 300, es: ${empMenos} empleados <br>`);
+		document.write(`La cantidad de empleados que cobra más de \$ 300, es: ${empMas} empleados <br>`);
+		document.write(`La empresa paga un total de \$ ${sumaSueldo}`);
+	</script>
+</body>
+</html>
