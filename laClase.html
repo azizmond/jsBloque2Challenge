@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Clase</title>
+</head>
+<body>
+    <script>
+        let alumno = prompt("Ingrese el nombre del alumno: ");
+        const nombreAlumno = [];
+        const notaAlumno = [];
+        const mayorNota = [];
+        const menorNota = [];
+        let cantAlumnos = 0;
+        let cantAprobados = 0;
+        let cantPromocionados = 0;
+        let cantReprobados = 0;
+        let promediarNotaAp = 0;
+        let promediarNotaRep = 0;
+        let notasPares = 0;
+        let notasImpares = 0;
+            while(alumno !== ""){
+                let nota = parseInt(prompt("Ingrese la nota para el alumno: "));
+                nombreAlumno.push(alumno);
+                notaAlumno.push(nota);
+                alumno = prompt("Ingrese el nombre del alumno: ");
+                cantAlumnos++;
+                    if(nota >= 7){
+                        cantPromocionados++;
+                        promediarNotaAp += nota;
+                            if((nota % 2) === 0){
+                                notasPares++;
+                            }else{
+                                notasImpares++;
+                            }
+                    }else if(nota >= 6){
+                        cantAprobados++;
+                        promediarNotaAp += nota;
+                            if((nota % 2) === 0){
+                                notasPares++;
+                            }else{
+                                notasImpares++;
+                            }
+                    }else{
+                        promediarNotaRep += nota;
+                        cantReprobados++;
+                            if((nota % 2) === 0){
+                                notasPares++;
+                            }else{
+                                notasImpares++;
+                            }
+                    };
+            }
+            let promAp = promediarNotaAp / (cantPromocionados + cantAprobados);
+            let promRep = promediarNotaRep / cantReprobados;
+            /*for(let i = 0; i <= cantAlumnos; i++){
+                if(notaAlumno[i] >= notaMayor[]){
+                    notaMayor[i].push(nombreAlumno[i]);
+                }
+            }*/
+            document.write(`La cantidad de alumnos cargados es: ${cantAlumnos} <hr>La cantidad de alumnos aprobados es: ${cantAprobados} <br>La cantidad alumnos promocionados es: ${cantPromocionados}<hr>El promedio de alumnos aprobados es: ${promAp}<br>El promedio de alumnos reprobados es: ${promRep}<hr>La cantidad de notas pares es: ${notasPares}<br>La cantidad de notas impares es: ${notasImpares}<hr>Estos son los nombres de los alumnos ordenados alfabéticamente:<br> ${nombreAlumno.sort().join(" <br> ")} `);
+    </script>
+</body>
+</html>
