@@ -12,6 +12,8 @@
         const notaAlumno = [];
         const mayorNota = [];
         const menorNota = [];
+        const mejorAlumno = [];
+        const peorAlumno = [];
         let cantAlumnos = 0;
         let cantAprobados = 0;
         let cantPromocionados = 0;
@@ -52,14 +54,34 @@
                             }
                     };
             }
-            let promAp = promediarNotaAp / (cantPromocionados + cantAprobados);
-            let promRep = promediarNotaRep / cantReprobados;
-            /*for(let i = 0; i <= cantAlumnos; i++){
-                if(notaAlumno[i] >= notaMayor[]){
-                    notaMayor[i].push(nombreAlumno[i]);
+            console.log(notaAlumno);
+            for(let i = 0; i < notaAlumno.length; i++){
+                if(i == 0){
+                    mayorNota.push(notaAlumno[i]);
+                    mejorAlumno.push(nombreAlumno[i]);
+                    menorNota.push(notaAlumno[i]);
+                    peorAlumno.push(nombreAlumno[i]);
+                }else if(notaAlumno[i] == mayorNota[length]){
+                    mayorNota.length = 0;
+                    mayorNota.push(notaAlumno[i]);
+                    mejorAlumno.push(nombreAlumno[i]);
+                }else if(notaAlumno[i] > mayorNota[length]){
+                    mayorNota.length = 0;
+                    mejorAlumno.length = 0;
+                    mayorNota.push(notaAlumno[i]);
+                    mejorAlumno.push(nombreAlumno[i]);
+                }else if(notaAlumno[i] == menorNota[length]){
+                    menorNota.length = 0;
+                    menorNota.push(notaAlumno[i]);
+                    peorAlumno.push(nombreAlumno[i]);
+                }else if(notaAlumno[i] < menorNota[length]){
+                    menorNota.length = 0;
+                    menorNota.push(notaAlumno[i]);
                 }
-            }*/
-            document.write(`La cantidad de alumnos cargados es: ${cantAlumnos} <hr>La cantidad de alumnos aprobados es: ${cantAprobados} <br>La cantidad alumnos promocionados es: ${cantPromocionados}<hr>El promedio de alumnos aprobados es: ${promAp}<br>El promedio de alumnos reprobados es: ${promRep}<hr>La cantidad de notas pares es: ${notasPares}<br>La cantidad de notas impares es: ${notasImpares}<hr>Estos son los nombres de los alumnos ordenados alfabéticamente:<br> ${nombreAlumno.sort().join(" <br> ")} `);
+            }
+            let promAp = promediarNotaAp / (cantPromocionados + cantAprobados);
+            let promRep = promediarNotaRep / cantReprobados;;
+            document.write(`La cantidad de alumnos cargados es: ${cantAlumnos} <hr>La cantidad de alumnos aprobados es: ${cantAprobados} <br>La cantidad alumnos promocionados es: ${cantPromocionados}<hr>El promedio de alumnos aprobados es: ${promAp}<br>El promedio de alumnos reprobados es: ${promRep || "no hay reprobados"} <hr>La cantidad de notas pares es: ${notasPares}<br>La cantidad de notas impares es: ${notasImpares}<hr>Los mejores alumnos son: ${mejorAlumno.join(" - ")} con una nota de: ${mayorNota}<br>Los alumnos con notas más bajas son: ${peorAlumno.join(" - ")} con una nota de: ${menorNota} <hr> Estos son los nombres de los alumnos ordenados alfabéticamente:<br> ${nombreAlumno.sort().join(" <br> ")} `);
     </script>
 </body>
 </html>
