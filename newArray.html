@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newArray</title>
+</head>
+<body>
+    <script>
+        let vect = [];
+        let suma = 0;
+            for (let i = 0; i < 5; i++) 
+            {
+                const nro =  (Math.random()*1000);
+                vect.push(parseInt(nro));
+                (i > 2 && i < 5) ? suma += parseInt(vect[i]): null;
+            };
+            document.write(`El tamaño final del vector es: ${vect.length} <br>`);
+            document.write(`Los dos últimos elementos del vector son: ${vect[3]} y ${vect[4]}<br> `);
+            document.write(`La suma de los dos últimos elementos es : ${suma}`);
+        </script>
+    
+</body>
+</html>
